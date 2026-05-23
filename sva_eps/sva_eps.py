@@ -1,19 +1,13 @@
 import reflex as rx
-from .pages.ingesta import formulario_expediente
-from .pages.dashboard import dashboard
+from .models.expediente import Expediente
 
+from .pages.ciudadano import ciudadano_page
+from .pages.admin import admin_page
+from .pages.programas import programas_page
+from .pages.consulta import consulta_page   # NUEVO
 
-app = rx.App(
-    stylesheets=[
-        "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap",
-    ],
-    style={
-        "font_family": "'IBM Plex Sans', sans-serif",
-        "background": "#F0F4F8",
-        "margin": "0",
-        "padding": "0",
-    },
-)
-
-app.add_page(formulario_expediente, route="/")
-app.add_page(dashboard, route="/dashboard")
+app = rx.App(theme=rx.theme(appearance="light"))
+app.add_page(ciudadano_page, route="/",          title="SVA-EPS · Solicitud de apoyo")
+app.add_page(consulta_page,  route="/consulta",  title="SVA-EPS · Consulta de estatus")
+app.add_page(programas_page, route="/programas", title="SVA-EPS · Programas")
+app.add_page(admin_page,     route="/admin",     title="SVA-EPS · Auditoría")

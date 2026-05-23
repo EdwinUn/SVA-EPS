@@ -1,6 +1,7 @@
 *.db
 *.py[cod]
 .venv
+.env
 assets/external/
 .web
 .states
