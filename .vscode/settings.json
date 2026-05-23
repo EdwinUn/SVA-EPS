@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "/c/Users/adria/AppData/Local/Microsoft/WindowsApps/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/SVA-EPS-HACKATEC/sva_eps"
+  ],
+  "python.analysis.typeCheckingMode": "basic"
+}
