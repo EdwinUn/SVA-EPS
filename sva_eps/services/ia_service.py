@@ -36,14 +36,15 @@ _API_KEY_HARDCODED = os.environ.get("GROQ_API_KEY", "")
 
 
 def _get_client():
-    """Devuelve un cliente Groq o None si no se puede usar."""
     api_key = os.environ.get("GROQ_API_KEY") or _API_KEY_HARDCODED
+    print(f"[DEBUG] API KEY encontrada: {bool(api_key)} | primeros 8 chars: {api_key[:8] if api_key else 'VACIA'}")
     if not api_key:
         return None
     try:
         from groq import Groq
         return Groq(api_key=api_key)
     except ImportError:
+        print("[DEBUG] groq no está instalado")
         return None
 
 
